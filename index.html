@@ -94,8 +94,12 @@
   }
   .contact-line svg{flex-shrink:0;}
   .contact-line:hover{color:var(--accent);}
+  /* Lines that aren't links shouldn't look clickable */
+  .contact-line.plain{cursor:default;}
+  .contact-line.plain:hover{color:var(--text-dim);}
   .copy-hint{font-size:10px; color:var(--text-faint); margin-left:auto; opacity:0; transition:opacity .15s;}
   .contact-line:hover .copy-hint{opacity:1;}
+  .copy-hint.copied{opacity:1; color:var(--accent); font-weight:600;}
 
   .pill-group{display:flex; flex-wrap:wrap; gap:6px;}
   .pill{
@@ -280,7 +284,7 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1.1.5 1.1 1.1V20c0 .6-.5 1.1-1.1 1.1C10.6 21.1 2.9 13.4 2.9 3.9 2.9 3.3 3.4 2.8 4 2.8h3.3c.6 0 1.1.5 1.1 1.1 0 1.2.2 2.4.6 3.5.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
         (+381) 65 5107 517
       </a>
-      <div class="contact-line">
+      <div class="contact-line plain">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
         Belgrade, Serbia
       </div>
@@ -288,7 +292,7 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.3c-1 0-1.7-.7-1.7-1.6s.8-1.6 1.7-1.6c1 0 1.7.7 1.7 1.6s-.7 1.6-1.7 1.6zm13.5 10.3h-3v-4.8c0-1.2 0-2.7-1.6-2.7s-1.9 1.3-1.9 2.6v4.9h-3v-9h2.9v1.3h.04c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.7 2 3.7 4.7v4.6z"/></svg>
         linkedin.com/in/nemanja-kopanlija-qa
       </a>
-      <div class="contact-line">
+      <div class="contact-line plain">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
         Serbian (native) · English (proficient)
       </div>
@@ -594,13 +598,18 @@
   const emailLink = document.getElementById('emailLink');
   if (emailLink) {
     emailLink.addEventListener('click', function(e){
-      const label = this.querySelector('.label');
-      if (!label || !navigator.clipboard || !navigator.clipboard.writeText) return; // let mailto: happen
+      const hint = this.querySelector('.copy-hint');
+      if (!hint || !navigator.clipboard || !navigator.clipboard.writeText) return; // let mailto: happen
       e.preventDefault();
       navigator.clipboard.writeText(EMAIL).then(() => {
-        const original = label.textContent;
-        label.textContent = 'Copied to clipboard';
-        setTimeout(() => { label.textContent = original; }, 1400);
+        // Confirm in the hint, so the address itself stays readable.
+        hint.textContent = 'copied';
+        hint.classList.add('copied');
+        clearTimeout(hint._resetTimer);
+        hint._resetTimer = setTimeout(() => {
+          hint.textContent = 'click to copy';
+          hint.classList.remove('copied');
+        }, 1600);
       }).catch(() => {
         window.location.href = 'mailto:' + EMAIL;
       });
