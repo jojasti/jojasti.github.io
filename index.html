@@ -226,6 +226,22 @@
   }
   .ach-card b{color:var(--text);}
 
+  /* Side project block in Outside work */
+  .proj{
+    background:var(--card); border:1px solid var(--card-line); border-radius:8px;
+    padding:16px 18px; margin-bottom:16px;
+  }
+  .proj-title{color:var(--text); font-weight:600; font-size:15px; margin-bottom:2px;}
+  .proj-repo{display:inline-block; color:var(--accent); font-size:12.5px;
+             text-decoration:none; margin-bottom:9px;}
+  .proj-repo:hover{text-decoration:underline;}
+  .proj p{color:var(--text-dim); font-size:14px; margin:0 0 9px 0;}
+  .proj ul{margin:0; padding-left:18px; color:var(--text-dim); font-size:13.5px;}
+  .proj li{margin-bottom:5px;}
+  .proj-label{
+    font-size:12px; color:var(--accent); font-weight:600; margin-bottom:7px;
+  }
+
   /* Education */
   .edu-item{margin-bottom:14px;}
   .edu-item .dates{color:var(--accent); font-size:12px; font-weight:600;}
@@ -233,6 +249,8 @@
   .edu-item .school{color:var(--text-dim); font-size:13.5px;}
 
   .side-note{color:var(--text-dim); font-size:13.5px; margin:0;}
+  .quiet-link{color:var(--text-faint); font-size:11.5px; text-decoration:none;}
+  .quiet-link:hover{color:var(--accent);}
 
   footer{
     padding:40px 56px 56px 56px; color:var(--text-faint); font-size:12.5px;
@@ -280,6 +298,8 @@
     .section h2{color:#111; border:none; margin-bottom:10px;}
     .section h2::after{background:#ccc;}
     .about p, .entry ul, .ach-card, .edu-item .school, .side-note{color:#222;}
+    .proj{background:#fff; border:1px solid #bbb; break-inside:avoid;}
+    .proj-title{color:#111;} .proj p, .proj ul{color:#222;} .proj-repo{color:#555;}
     .entry{break-inside:avoid; margin-bottom:16px;}
     .entry .company{color:#111;}
     .entry li.dim, .entry.no-match{opacity:1;}
@@ -554,7 +574,19 @@
 
     <section class="section" id="outside-work">
       <h2>Outside work</h2>
-      <p class="side-note">I run a small furniture studio in Belgrade — I design and build industrial-style pieces in metal and wood, from cutting and welding to finishing and delivery.</p>
+      <div class="proj">
+        <div class="proj-title">E2E Test Automation Framework</div>
+        <a class="proj-repo" href="https://github.com/jojasti/eye4art-e2e" target="_blank" rel="noopener noreferrer">github.com/jojasti/eye4art-e2e</a>
+        <p>Built a Playwright + TypeScript + Cucumber (BDD) framework from scratch for my own production website, with 110+ scenarios covering navigation, product catalog, ordering rules, blog and SEO metadata.</p>
+        <ul>
+          <li>CI in GitHub Actions on every push and on a daily schedule, with lint, type check and tests as quality gates, and email alerts with screenshots on failure.</li>
+          <li>Runs safely against production: read-only, analytics blocked, form requests mocked, so no test can touch real data.</li>
+          <li>Added data-testid attributes to the site itself instead of relying on fragile locators.</li>
+          <li>AI-assisted test authoring on a protected branch workflow: agent-written batches go through PR review and CI before merge.</li>
+        </ul>
+      </div>
+      <div class="proj-label">Furniture studio</div>
+      <p class="side-note">I run a small furniture studio in Belgrade, designing and building industrial-style pieces in metal and wood, from cutting and welding to finishing and delivery. <a class="quiet-link" href="https://eye4artstudio.com" target="_blank" rel="noopener noreferrer">eye4artstudio.com</a></p>
     </section>
 
     <footer>
