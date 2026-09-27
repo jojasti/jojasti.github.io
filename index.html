@@ -394,7 +394,7 @@
       <a href="#education">Education</a>
       <a href="#skills-full">Skills</a>
       <a href="#strengths">Strengths</a>
-      <a href="#outside-work">Outside work</a>
+      <a href="#outside-work">Personal Projects</a>
     </nav>
 
     <section class="section about" id="about">
@@ -403,6 +403,7 @@
       <p>I wrote and maintained tests in an existing Playwright framework, covering back-office modules such as role management, bank account configuration and daily balance monitoring, with page objects and Cucumber scenarios. Work spans UI, API and backend testing across microservices, with request tracing in Kibana when something does not add up.</p>
       <p>Through UAT and go-live I was the QA point of contact, solving issues in real time so releases were not blocked. I worked in distributed Agile teams across several time zones, in Scrum with two-week sprints.</p>
       <p>Outside work I built my own E2E framework from scratch for a production website, 110+ scenarios running daily in GitHub Actions.</p>
+      <p>I use AI tools daily in my QA work: test design, log analysis, and writing and reviewing test code. I treat the output as a first draft, not an answer.</p>
       <div class="hashtags">#QAAutomationEngineer #SoftwareQAEngineer #Playwright</div>
     </section>
 
@@ -423,6 +424,7 @@
             <li data-skills="uat,cicd">Tested release branches on staging before handover to UAT, then acted as the QA point of contact through UAT and go-live, resolving issues in real time so stakeholders were never blocked.</li>
             <li data-skills="agile">Worked in Scrum ceremonies - two-week sprint planning, refinement and retrospectives - with cross-functional teams across several time zones on a globally scaled, microservice-based system.</li>
             <li data-skills="jira,testrail">Managed test cases in TestRail and tracked defects in Jira, writing reproducible, technically precise bug reports.</li>
+            <li data-skills="">Wrote how-to guides and test documentation in Confluence for the team and for other departments, so new QA colleagues could learn the application and the test process.</li>
           </ul>
         </div>
 
@@ -472,7 +474,6 @@
 
       </div>
     </section>
-
     <section class="section" id="achievements">
       <h2>Achievements</h2>
       <div class="ach-grid">
@@ -511,6 +512,7 @@
             <span class="pill static">Cucumber / Gherkin</span>
             <span class="pill static">BDD</span>
             <span class="pill static">Page Object Model</span>
+            <span class="pill static">AI-assisted testing</span>
           </div>
         </div>
         <div class="skill-cat">
@@ -522,7 +524,7 @@
             <span class="pill static">REST API testing</span>
             <span class="pill static">SQL</span>
             <span class="pill static">Kibana / ELK log verification</span>
-            <span class="pill static">microservices</span>
+            <span class="pill static">Microservices</span>
           </div>
         </div>
         <div class="skill-cat">
@@ -531,6 +533,8 @@
             <span class="pill static">Jira</span>
             <span class="pill static">TestRail</span>
             <span class="pill static">Testmo</span>
+            <span class="pill static">Allure</span>
+            <span class="pill static">Confluence</span>
             <span class="pill static">Agile</span>
             <span class="pill static">Scrum</span>
             <span class="pill static">UAT</span>
@@ -555,6 +559,7 @@
           <div class="pill-group">
             <span class="pill static">Git</span>
             <span class="pill static">GitLab CI/CD</span>
+            <span class="pill static">GitHub Actions</span>
             <span class="pill static">Windows</span>
             <span class="pill static">Linux</span>
           </div>
@@ -575,11 +580,11 @@
     </section>
 
     <section class="section" id="outside-work">
-      <h2>Outside work</h2>
+      <h2>Personal Projects</h2>
       <div class="proj">
         <div class="proj-title">E2E Test Automation Framework</div>
         <a class="proj-repo" href="https://github.com/jojasti/eye4art-e2e" target="_blank" rel="noopener noreferrer">github.com/jojasti/eye4art-e2e</a>
-        <p>Built a Playwright + TypeScript + Cucumber (BDD) framework from scratch for my own production website, with 110+ scenarios covering navigation, product catalog, ordering rules, blog and SEO metadata.</p>
+        <p>Built a Playwright + TypeScript + Cucumber (BDD) framework from scratch, with Allure reporting, for my own production website, with 110+ scenarios covering navigation, product catalog, ordering rules, blog and SEO metadata.</p>
         <ul>
           <li>CI in GitHub Actions on every push and on a daily schedule, with lint, type check and tests as quality gates, and email alerts with screenshots on failure.</li>
           <li>Runs safely against production: read-only, analytics blocked, form requests mocked, so no test can touch real data.</li>
