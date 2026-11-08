@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nemanja Kopanlija - CV</title>
+<style>
+@font-face{font-family:Inter;font-weight:400;src:url(fonts/inter-latin-400-normal.woff2)}
+@font-face{font-family:Inter;font-weight:500;src:url(fonts/inter-latin-500-normal.woff2)}
+@font-face{font-family:Inter;font-weight:600;src:url(fonts/inter-latin-600-normal.woff2)}
+@font-face{font-family:Inter;font-weight:700;src:url(fonts/inter-latin-700-normal.woff2)}
+@font-face{font-family:Inter;font-weight:400;src:url(fonts/inter-latin-ext-400-normal.woff2);unicode-range:U+0100-024F}
+@font-face{font-family:Inter;font-weight:500;src:url(fonts/inter-latin-ext-500-normal.woff2);unicode-range:U+0100-024F}
+@font-face{font-family:Inter;font-weight:600;src:url(fonts/inter-latin-ext-600-normal.woff2);unicode-range:U+0100-024F}
+@font-face{font-family:Inter;font-weight:700;src:url(fonts/inter-latin-ext-700-normal.woff2);unicode-range:U+0100-024F}
+@font-face{font-family:Plex;font-style:italic;src:url(fonts/ibm-plex-sans-latin-400-italic.woff2)}
+@font-face{font-family:Plex;font-style:italic;font-weight:700;src:url(fonts/ibm-plex-sans-latin-700-italic.woff2)}
+
+:root{
+  --dark:#171A1C; --green:#1F5E4E; --mint:#8FC7B4;
+  --main:#EFF6F1; --side:#DCEAE1; --box:#CBE2D5;
+  --text:#2B3033; --gray:#7A8185;
+}
+@page{size:A4;margin:9mm 9mm}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:Inter,sans-serif;color:var(--text);font-size:7.6pt;line-height:1.45}
+
+header{background:var(--dark);color:#fff;padding:16pt 20pt 12pt;border-bottom:1.5pt solid var(--green)}
+header h1{font-weight:400;font-size:24pt;letter-spacing:.2pt;line-height:1.1}
+header .role{color:var(--mint);font-weight:600;font-size:11pt;margin:7pt 0 7pt}
+header .tags{font-size:6.8pt;color:#E6E9EA}
+header .contact{display:flex;align-items:baseline;gap:9pt;font-size:6.8pt;margin-top:9pt;color:#E6E9EA}
+header .contact .u{border-bottom:.6pt solid #9aa3a6;padding-bottom:1pt}
+header .contact .li{margin-left:0}
+
+.grid{display:grid;grid-template-columns:70% 30%}
+main{background:var(--main);padding:12pt 12pt 14pt 14pt}
+aside{background:var(--side);padding:12pt 14pt 0 12pt;display:flex;flex-direction:column;overflow:hidden}
+
+main h2{font-size:9.5pt;font-weight:700;color:var(--dark);padding-bottom:4pt;border-bottom:1.6pt solid var(--dark);margin:6pt 0 6pt}
+main h2:first-child{margin-top:0}
+p.profile{font-size:7.6pt;line-height:1.55}
+
+.job{margin-top:8pt;padding-bottom:9pt;border-bottom:.8pt solid #C3D3C9}
+.job:last-of-type{border-bottom:none}
+.job h3{font-size:10.5pt;font-weight:700;color:var(--dark)}
+.job .co{font-size:8.6pt;font-weight:600;color:var(--green);margin:2pt 0 5pt}
+.job .co span{color:var(--gray);font-weight:400}
+.job h4{font-size:7.8pt;font-weight:600;color:var(--green);margin:6pt 0 2pt;letter-spacing:.1pt}
+ul.b{list-style:none;padding-left:2pt}
+ul.b li{position:relative;padding-left:10pt;margin:1.5pt 0;font-size:6.9pt;line-height:1.5}
+ul.b li::before{content:"";position:absolute;left:1pt;top:3.6pt;width:2.4pt;height:2.4pt;background:var(--green);border-radius:50%}
+.job, .ach{break-inside:avoid}
+.job.split{break-inside:auto}
+
+.ach{background:var(--box);border-left:2.4pt solid var(--green);padding:7pt 10pt;margin:6pt 0;font-size:6.9pt;line-height:1.5}
+.ach b{color:var(--dark);font-weight:600}
+
+aside h2{font-size:7.8pt;font-weight:700;color:var(--dark);padding-bottom:4pt;border-bottom:1.2pt solid var(--green);margin:18pt 0 9pt}
+aside h2:first-child{margin-top:0;line-height:13.775pt}
+aside .sk{margin-bottom:13pt}
+aside .sk h5{font-size:7.6pt;font-weight:600;color:var(--green)}
+aside .sk p,aside .ed p,aside .lang p{font-size:8.2pt;line-height:1.45;color:#3a4043}
+aside .ed{margin-bottom:9pt}
+aside .ed b{font-size:7.6pt;font-weight:600;color:var(--dark);display:block}
+aside .ed .y{color:var(--gray)}
+aside .lang b{font-size:7.8pt;font-weight:600;color:var(--dark);display:block}
+ul.st{list-style:none}
+ul.st li{position:relative;padding-left:11pt;font-size:8pt;margin:4pt 0}
+ul.st li::before{content:"";position:absolute;left:1pt;top:3.5pt;width:3pt;height:3pt;background:var(--green)}
+.proj{flex:1;background:var(--main);margin:10pt -14pt -30pt -12pt;padding:0 14pt 44pt 12pt}
+.proj .ph{background:var(--side);margin:0 -14pt 0 -12pt;padding:8pt 14pt 4pt 12pt}
+.proj .ph b{font-size:7.6pt;font-weight:700;color:var(--dark);display:block}
+.co a.repo{font-family:Plex,sans-serif;font-style:italic;font-weight:700;color:#174A3D;text-decoration:underline;text-underline-offset:1.5pt}
+.proj .ph a{font-family:Plex,sans-serif;font-style:italic;font-weight:700;font-size:7.4pt;color:#174A3D;text-decoration:underline;text-underline-offset:1.5pt}
+a{color:inherit;text-decoration:none}
+.proj .stack{font-size:6.5pt;margin:6pt 0 2pt}
+.proj ul{padding-left:10pt;font-size:6.5pt;line-height:1.45}
+.proj li{margin:1pt 0}
+.pp{margin-top:0;border:1pt solid #A9CDB9;border-left:3pt solid var(--green);break-inside:avoid;background:#fff}
+.pp-head{background:var(--box);color:var(--dark);padding:8pt 11pt 7pt}
+.pp-tag{display:inline-block;font-size:6pt;font-weight:700;letter-spacing:1.2pt;text-transform:uppercase;color:#fff;background:var(--green);padding:1.5pt 5pt;margin-bottom:5pt}
+.pp-title{font-size:10.5pt;font-weight:700}
+.pp-link{display:inline-block;font-family:Plex,sans-serif;font-style:italic;font-weight:700;font-size:7.4pt;color:#174A3D;text-decoration:underline;text-underline-offset:1.5pt;margin-top:2pt}
+.pp-stack{font-size:6.8pt;color:#4E5A56;margin-top:3pt}
+.pp-desc{font-size:7.3pt;line-height:1.45;color:#2B3033;margin:3pt 0 2pt}
+.pp-body{padding:7pt 11pt 8pt 8pt}
+.divider{display:flex;align-items:center;gap:8pt;margin:16pt 0 14pt;break-after:avoid}
+.divider span{flex:1;height:.8pt;background:#8FB9A6}
+.divider i{width:6pt;height:6pt;background:var(--green);transform:rotate(45deg)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Nemanja Kopanlija</h1>
+  <div class="role">Senior QA Automation Engineer</div>
+  <div class="tags">Playwright · TypeScript · Cucumber/BDD · API testing · Kibana/ELK · GitLab CI/CD · 11 years in QA, iGaming &amp; Fintech</div>
+  <div class="contact">
+    <a class="u" href="mailto:nemanja.kopanlija@gmail.com">nemanja.kopanlija@gmail.com</a>
+    <a class="u" href="tel:+381655107517">(+381) 65 5107 517</a>
+    <span>Belgrade, Serbia</span>
+    <a class="u li" href="https://www.linkedin.com/in/nemanja-kopanlija-qa">linkedin.com/in/nemanja-kopanlija-qa</a>
+  </div>
+</header>
+
+<div class="grid">
+<main>
+  <h2>Profile</h2>
+  <p class="profile">QA engineer with 11 years of experience in software testing, including four years in automation using Playwright, TypeScript and Cucumber.js. At Sportserve, I worked across UI, API and backend testing of a fintech back-office platform, using Kibana and SQL to investigate issues across microservices.<br>
+  I supported release verification, UAT and go-live as the QA point of contact, working closely with developers and other teams across time zones.<br>
+  I use AI tools daily for test design, log analysis and code review, and I verify their output before using it.<br>
+  Outside work, I built an E2E framework from scratch for a production website, with 110+ scenarios running daily in GitHub Actions.</p>
+
+  <h2 style="margin-top:12pt">Experience</h2>
+
+  <div class="job split">
+    <h3>Senior Quality Analyst</h3>
+    <div class="co">Sportserve, Belgrade <span>| 2022 - 2026</span></div>
+    <h4>Test automation &amp; framework</h4>
+    <ul class="b">
+      <li>Maintained the Playwright and TypeScript test suite, developing Cucumber/Gherkin scenarios and page objects using the Page Object Model. The suite covered approximately 250 scenarios across three environments.</li>
+      <li>Covered back-office modules such as role management, bank account configuration and daily balance monitoring.</li>
+    </ul>
+    <h4>API &amp; backend testing</h4>
+    <ul class="b">
+      <li>Tested API and backend flows across microservices, using Kibana to investigate request/response headers and event data, and SQL queries to verify database records.</li>
+      <li>Tested financial and banking features in a large-scale back-office platform, covering deposits, withdrawals and payment provider flows.</li>
+    </ul>
+    <h4>Release &amp; CI/CD</h4>
+    <ul class="b">
+      <li>Worked with GitLab CI/CD and Git-based release workflows, including branching and merge request reviews. The suite ran in the release workflow and daily on staging to catch bugs before production.</li>
+      <li>Verified release branches on staging before UAT and supported go-live as the QA point of contact, investigating issues and coordinating with stakeholders.</li>
+    </ul>
+    <h4>Agile delivery &amp; process</h4>
+    <ul class="b">
+      <li>Worked in Scrum with two-week sprints - sprint planning, refinement and retrospectives - with cross-functional teams across multiple time zones.</li>
+      <li>Managed test cases in TestRail and tracked defects in Jira, writing reproducible, technically precise bug reports.</li>
+      <li>Wrote how-to guides and test documentation in Confluence for the team and other departments, and helped new QA colleagues learn the application and the test process.</li>
+    </ul>
+  </div>
+
+  <div class="job split">
+    <h3>Software QA Engineer</h3>
+    <div class="co">IGT, Belgrade <span>| 2015 - 2022</span></div>
+    <ul class="b">
+      <li>Performed functional, integration, system, regression, exploratory and load testing of online casino games against customer, jurisdictional, regulatory and functional specifications.</li>
+      <li>Reviewed product documentation and release packages for conformance and release readiness.</li>
+      <li>Created, maintained and executed detailed test plans, test cases and test documentation with effort estimations, across system, integration and regression cycles.</li>
+      <li>Documented and tracked defects in Jira, performed root cause analysis with the development team and proposed corrective action.</li>
+      <li>Contributed to defining internal test standards and procedures, reported progress and quality status to stakeholders, and mentored new hires on the test process.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <h3>Administrator and Technical Support Specialist</h3>
+    <div class="co">ROHE d.o.o, Belgrade <span>| 2013 - 2015</span></div>
+    <ul class="b"><li>Network maintenance, server administration, and technical support for workstations, operating systems and cash registers.</li></ul>
+  </div>
+  <div class="job">
+    <h3>IT Support</h3>
+    <div class="co">Elektrodistribucija Beograd (EDB) <span>| 2011 - 2012</span></div>
+    <ul class="b"><li>Technical support for employees, software installations and system updates across hardware and network resources.</li></ul>
+  </div>
+  <div class="job">
+    <h3>IT System Technician</h3>
+    <div class="co">Asoft4Solution, Belgrade <span>| 2010 - 2011</span></div>
+    <ul class="b"><li>Installation and servicing of POS terminals for Komercijalna Banka, with technical support and customer training.</li></ul>
+  </div>
+
+  <h2 style="margin-top:4pt">Achievements</h2>
+  <div class="ach"><b>API migration verified.</b> Verified a backend HTTP client migration from GuzzleClient to Symfony HttpClient across critical financial flows. Executed approximately 20 test scenarios across Dafabet and Nextbet, confirming no regressions before release.</div>
+  <div class="ach"><b>Automated negative-path coverage.</b> Added automated negative-path scenarios for mandatory fields, duplicate entries and minimum/maximum values to the Playwright/Cucumber suite, reducing reliance on manual regression testing.</div>
+  <div class="divider"><span></span><i></i><span></span></div>
+  <div class="pp">
+    <div class="pp-head">
+      <span class="pp-tag">Personal Project</span>
+      <div class="pp-title">E2E Test Automation Framework</div>
+      <div class="pp-desc">Built in my own time to test my furniture studio's live website end to end, and to set up a complete framework and CI from zero, not only write tests in an existing one.</div>
+      <a class="pp-link" href="https://github.com/jojasti/eye4art-e2e">github.com/jojasti/eye4art-e2e</a>
+      <div class="pp-stack">Playwright · TypeScript · Cucumber/BDD · Allure · GitHub Actions</div>
+    </div>
+    <ul class="b pp-body">
+      <li>Project structure with a base page, page objects on the Page Object Model and Gherkin scenarios.</li>
+      <li>110+ scenarios running on every push and daily in GitHub Actions, with lint, type check and tests as quality gates.</li>
+      <li>Protected main branch: pull requests required and tests must pass before merge, with no bypass.</li>
+      <li>Runs safely against production: read-only tests, analytics blocked and form requests mocked.</li>
+      <li>AI-assisted workflow: a coding agent writes tests batch by batch from a test plan, a read-only reviewer agent checks them, and I review and merge.</li>
+    </ul>
+  </div>
+</main>
+
+<aside>
+  <h2>Skills</h2>
+  <div class="sk"><h5>Test automation</h5><p>Playwright, TypeScript, JavaScript, Cucumber / Gherkin, BDD, Page Object Model, Allure, AI-assisted QA, Claude Code</p></div>
+  <div class="sk"><h5>API &amp; backend testing</h5><p>Postman, Bruno, Swagger, REST API testing, SQL, Kibana / ELK log verification, microservices</p></div>
+  <div class="sk"><h5>Test management &amp; process</h5><p>Jira, TestRail, Testmo, Confluence, Agile, Scrum, UAT, test plans &amp; effort estimation, defect and root cause analysis</p></div>
+  <div class="sk"><h5>Testing types</h5><p>Manual, automated, E2E, smoke, regression, exploratory, integration, system, load</p></div>
+  <div class="sk"><h5>Tooling &amp; environments</h5><p>Git, GitLab CI/CD, GitHub Actions, Linux, Windows</p></div>
+
+  <h2>Education</h2>
+  <div class="ed"><b>Belgrade Business School</b><p>Department of Informatics and e-business <span class="y">2004 - 2008</span></p></div>
+  <div class="ed"><b>Secondary Technical School "Rade Koncar"</b><p>Software Programming<br><span class="y">2000 - 2004</span></p></div>
+  <div class="ed"><b>ISTQB course</b><p class="y">2018 - 2019</p></div>
+
+  <h2>Languages</h2>
+  <div class="lang"><b>Serbian</b><p>Native</p></div>
+  <div class="lang" style="margin-top:4pt"><b>English</b><p>Proficient</p></div>
+
+  <div style="break-before:page;padding-top:12pt"><h2 style="margin-top:0">Strengths</h2>
+  <ul class="st"><li>Detail-oriented</li><li>Analytical</li><li>Organized</li><li>Strong communicator</li><li>Problem solver</li><li>Team player</li></ul></div>
+
+  <h2>Outside work</h2>
+  <p style="font-size:8pt">Runs a small furniture studio in Belgrade, designing and building industrial-style pieces in metal and wood.<br><a href="https://www.eye4artstudio.com" style="font-family:Plex,sans-serif;font-style:italic;font-weight:700;color:#174A3D;text-decoration:underline;text-underline-offset:1.5pt">eye4artstudio.com</a></p>
+
+</aside>
+</div>
+</body>
+</html>
